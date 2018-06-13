@@ -74,10 +74,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display (Qualcomm AD)
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.cabl=0 \
     ro.qcom.ad=1 \
     ro.qcom.ad.calib.data=/system/etc/calib.cfg \
-    ro.qcom.ad.sensortype=2
+    ro.qcom.ad.sensortype=2 \
+    ro.vendor.display.cabl=0
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -99,10 +99,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.enable_vds=1 \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=440 \
-    sdm.debug.disable_rotator_split=1 \
-    sdm.debug.disable_skip_validate=1 \
-    sdm.perf_hint_window=50 \
-    vendor.display.enable_default_color_mode=1
+    vendor.display.disable_rotator_split=1 \
+    vendor.display.disable_skip_validate=1 \
+    vendor.display.enable_default_color_mode=1 \
+    vendor.display.perf_hint_window=50 \
+    vendor.gralloc.enable_fb_ubwc=1
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \

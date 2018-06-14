@@ -34,7 +34,16 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOTANIMATION_HALF_RES := true
+TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 
+# Generic properties
+PRODUCT_GENERIC_PROPERTIES += \
+    use.dts_eagle=true \
+    hpx_send_params=1
+
+# HWUI overrides
+# $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \

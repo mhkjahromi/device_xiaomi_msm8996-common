@@ -550,6 +550,9 @@ vendor/lib/libqti-perfd-client.so|a4a6da47ee26fcd5116c514f7fed15b91306aea3
 vendor/lib/libqti-util.so|d65f3ef240cebea73bd1ba8b1132a7e639aa05bb
 vendor/lib/vendor.qti.hardware.perf@1.0.so|84e437b0dea2d8c1d5712a9fadf132ae5d665d46
 
+# msm_irqbalance - from sailfish - PPR2.181005.003
+vendor/bin/msm_irqbalance|3f7a923d9d01dbfda40ebdfdd27a62167df69c13
+
 # Peripheral manager - from daisy - PKQ1.180917.001 V10.0.7.0 PDLMIXM
 vendor/bin/pm-proxy|56e9bdaa39270aa4456c9995a8a9e4618ba616a6
 vendor/bin/pm-service|7cbca1671529a805177f11f3f72defdbbe48a61c

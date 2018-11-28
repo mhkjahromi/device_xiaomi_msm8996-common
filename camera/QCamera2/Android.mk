@@ -33,9 +33,9 @@ LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-variable
 
 #HAL 1.0 source
 
-ifeq ($(TARGET_SUPPORT_HAL1),false)
+#ifeq ($(TARGET_SUPPORT_HAL1),false)
 LOCAL_CFLAGS += -DQCAMERA_HAL3_SUPPORT
-else
+#else
 LOCAL_CFLAGS += -DQCAMERA_HAL1_SUPPORT
 LOCAL_SRC_FILES += \
         HAL/QCamera2HWI.cpp \
@@ -45,11 +45,12 @@ LOCAL_SRC_FILES += \
         HAL/QCameraChannel.cpp \
         HAL/QCameraStream.cpp \
         HAL/QCameraPostProc.cpp \
+		HAL/CameraParameters.cpp \
         HAL/QCamera2HWICallbacks.cpp \
         HAL/QCameraParameters.cpp \
         HAL/QCameraParametersIntf.cpp \
         HAL/QCameraThermalAdapter.cpp
-endif
+#endif
 
 # System header file path prefix
 LOCAL_CFLAGS += -DSYSTEM_HEADER_PREFIX=sys
@@ -98,9 +99,8 @@ LOCAL_C_INCLUDES := \
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/HAL
 
-ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
-endif
+
 ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_CFLAGS += -DTARGET_TS_MAKEUP
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/HAL/tsMakeuplib/include
@@ -118,7 +118,7 @@ LOCAL_C_INCLUDES += \
         $(TARGET_OUT_HEADERS)/qcom/display
 LOCAL_C_INCLUDES += \
         $(call project-path-for,qcom-display)/libqservice
-LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
+LOCAL_SHARED_LIBRARIES := libcamera_client liblog libhardware libutils libcutils libdl libsync
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
 ifeq ($(USE_DISPLAY_SERVICE),true)

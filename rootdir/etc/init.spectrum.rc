@@ -14,214 +14,256 @@ on property:sys.boot_completed=1
 
 # Balance (default profile)
 on property:persist.spectrum.profile=0
-    # Configure governor settings for little cluster
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1478400
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/is_locked 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 90
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 22000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 844800
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 20000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 307200:20 307200:25 480000:30 556800:35 556800:40 729600:45 844800:50 844800:55 1036800:60 1036800:65 1036800:70 1228800:75 1228800:80 1228800:85 1478400:90 1478400:95 1478400:100"
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 18000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 78000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 80000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/is_locked 1
-
-    # Configure governor settings for big cluster
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2150400
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/is_locked 0
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load 85
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay "13000 1324800:13000 1632000:21000 1996800:21000"
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate 10000
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/hispeed_freq 940800
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_slack 3333
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "85 307200:20 307200:25 480000:30 806400:35 940800:40 1190400:45 1248000:50 1248000:55 1478400:60 1555200:65 1555200:70 1785600:75 1824000:80 1996800:85 2073600:90 2073600:95 2073600:100"
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 18000
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boost 0
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/fast_ramp_down 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/align_windows 0
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_migration_notif 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/enable_prediction 0
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_sched_load 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis 100000
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boostpulse_duration 80000
-    write /sys/devices/system/cpu/cpu2/cpufreq/interactive/is_locked 1
-
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 624000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 133000000
-    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
-    write /sys/block/dm-0/queue/read_ahead_kb 128
-    write /sys/block/sda/queue/read_ahead_kb 128
-    write /sys/block/sde/queue/read_ahead_kb 128
-    write /sys/block/dm-0/queue/scheduler bfq
-    write /sys/block/sda/queue/scheduler bfq
-    write /sys/block/sde/queue/scheduler bfq
-    write /sys/block/sda/queue/iostats 0
-    write /sys/block/sde/queue/iostats 0
-    write /sys/module/workqueue/parameters/power_efficient Y
-    write /proc/sys/kernel/sched_boost 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor schedutil
+	write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 500
+	write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 1000
+	write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 500
+	write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/iowait_boost_enable 0
+	write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 5000
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay  "18000 1280000:98000 1480000:38000"
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 97
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1180000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 38000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 380000:7 480000:31 580000:13 680000:58 780000:63 980000:73 1180000:98"
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 180000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay  "18000 1580000:98000 1880000:38000"
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load 98
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/hispeed_freq 1480000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 18000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "80 380000:34 680000:40 780000:63 880000:57 1080000:72 1380000:78 1480000:98"
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate 20000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_slack 180000
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1363200
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1824000
+	write /sys/module/workqueue/parameters/power_efficient Y 
+	write /sys/class/kgsl/kgsl-3d0/max_gpuclk 510000000
+	write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
 
 
 # Performance 
 on property:persist.spectrum.profile=1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "hyperx"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "hyperx"
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2150400
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/above_hispeed_delay 19000
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/align_windows 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/boost 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/boostpulse
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/boostpulse_duration 80000
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/go_hispeed_load 75
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/hispeed_freq 1324800
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/io_is_busy 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/max_freq_hysteresis 95000
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/min_sample_time 30000
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/target_loads "83 1478400:90 1593600:95"
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/timer_rate 10000
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/timer_slack 80000
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/use_migration_notif 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/hyperx/use_shed_load 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/above_hispeed_delay 19000
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/align_windows 0
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/boost 0
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/boostpulse
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/boostpulse_duration 80000 	
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/go_hispeed_load 75
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/hispeed_freq 1708800
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/io_is_busy 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/max_freq_hysteresis 95000
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/min_sample_time 30000
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/target_loads "83 2073600:90 2150400:95"
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/timer_rate 10000
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/timer_slack 80000
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/use_migration_notif 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/hyperx/use_shed_load 1
-    #write /sys/kernel/cpu_input_boost/ib_freqs "1363200 1363200"
-    #write /sys/kernel/cpu_input_boost/ib_duration_ms 1000
-    #write /sys/kernel/cpu_input_boost/enabled 1
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 624000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 315000000
-    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 4
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
-    write /sys/block/dm-0/queue/read_ahead_kb 1024
-    write /sys/block/sda/queue/read_ahead_kb 1024
-    write /sys/block/sde/queue/read_ahead_kb 1024
-    write /sys/block/dm-0/queue/scheduler deadline
-    write /sys/block/sda/queue/scheduler deadline
-    write /sys/block/sde/queue/scheduler deadline
-    write /sys/block/sda/queue/iostats 0
-    write /sys/block/sde/queue/iostats 0
-    write /sys/module/workqueue/parameters/power_efficient N
-    write /sys/kernel/sched/arch_power 0
-    write /proc/sys/kernel/sched_boost 1
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor schedutil
+	write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
+	write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable 1
+	write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
+	write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 20000
+	write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/iowait_boost_enable 1
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 500
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay  "18000 1280000:98000 1480000:38000"
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 97
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1180000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 38000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 380000:7 480000:31 580000:13 680000:58 780000:63 980000:73 1180000:98"
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 180000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay  "18000 1580000:98000 1880000:38000"
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load 98
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/hispeed_freq 1480000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 18000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "80 380000:34 680000:40 780000:63 880000:57 1080000:72 1380000:78 1480000:98"
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate 20000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_slack 180000
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2188800
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2342400
+	write /sys/module/workqueue/parameters/power_efficient Y
+	write /sys/class/kgsl/kgsl-3d0/max_gpuclk 624000000
+	write /sys/class/kgsl/kgsl-3d0/max_gpuclk 653000000
+	write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
 
 # Battery
 on property:persist.spectrum.profile=2
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "blu_active"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "blu_active"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "blu_active"
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1363200
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1363200
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/go_hispeed_load 99
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/above_hispeed_delay 25000
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/timer_rate 20000
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/hispeed_freq 979200
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/timer_slack -1
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/target_loads 60
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/min_sample_time 45000
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/fastlane_threshold 35
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/fastlane 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/align_windows 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/io_is_busy 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/go_hispeed_load 99
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/above_hispeed_delay 25000
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/timer_rate 35000
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/hispeed_freq 1286400
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/timer_slack 20000
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/target_loads 50
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/min_sample_time -1
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/fastlane_threshold 35
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/fastlane 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/align_windows 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/io_is_busy 1
-    write /sys/kernel/cpu_input_boost/enabled 0
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 401800000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 133000000
-    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor powersave
-    write /sys/block/dm-0/queue/read_ahead_kb 256
-    write /sys/block/sda/queue/read_ahead_kb 256
-    write /sys/block/sde/queue/read_ahead_kb 256
-    write /sys/block/dm-0/queue/scheduler noop
-    write /sys/block/sda/queue/scheduler noop
-    write /sys/block/sde/queue/scheduler noop
-    write /sys/module/workqueue/parameters/power_efficient Y
-    write /sys/kernel/sched/arch_power 1
-    write /proc/sys/kernel/sched_boost 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor schedutil
+	write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 500
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 5000
+	write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 500
+    write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/iowait_boost_enable 0
+	write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 20000
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay  "58000 1280000:98000 1580000:58000"
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 98
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1180000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 18000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 380000:9 580000:36 780000:62 880000:71 980000:87 1080000:75 1180000:98"
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 180000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay   "38000 1480000:98000 1880000:138000"
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load 98
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/hispeed_freq 1380000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 18000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "80 380000:39 480000:35 680000:29 780000:63 880000:71 1180000:91 1380000:83 1480000:98"
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate 20000
+	write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_slack 180000
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1363200
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1363200
+	write /sys/module/workqueue/parameters/power_efficient Y
+	write /sys/class/kgsl/kgsl-3d0/max_gpuclk 315000000
+	write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
 
 # Gaming
 on property:persist.spectrum.profile=3
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "blu_active"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "blu_active"
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 307200
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600 
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 307200
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2150400
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/go_hispeed_load 75
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/above_hispeed_delay 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/timer_rate 40000
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/hispeed_freq 1363200
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/timer_slack -1
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/target_loads "80 614400:33 844800:25 979200:50 1209600:65 1363200:70 1516800:85 1593600:90"
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/min_sample_time 40000
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/fastlane_threshold 35
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/fastlane 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/align_windows 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/blu_active/io_is_busy 1
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/go_hispeed_load 90
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/above_hispeed_delay 0
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/timer_rate 20000
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/hispeed_freq 1363200
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/timer_slack -1
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/target_loads "74 979200:73 1132800:64 1209600:80 1286400:61 1440000:69 1670400:64 1900800:74 1977600:69 2054400:67 2150400:72"
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/min_sample_time 40000
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/fastlane_threshold 35
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/fastlane 0
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/align_windows 0
-    write /sys/devices/system/cpu/cpu2/cpufreq/blu_active/io_is_busy 1
-    #write /sys/kernel/cpu_input_boost/ib_freqs "960000 1363200"
-    #write /sys/kernel/cpu_input_boost/ib_duration_ms 1000
-    write /sys/kernel/cpu_input_boost/enabled 1
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 624000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 315000000
-    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 4
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
-    write /sys/block/dm-0/queue/read_ahead_kb 1024
-    write /sys/block/sda/queue/read_ahead_kb 1024
-    write /sys/block/sde/queue/read_ahead_kb 1024
-    write /sys/block/dm-0/queue/scheduler deadline
-    write /sys/block/sda/queue/scheduler deadline
-    write /sys/block/sde/queue/scheduler deadline
-    write /sys/module/workqueue/parameters/power_efficient N
-    write /sys/kernel/sched/arch_power 0
-    write /proc/sys/kernel/sched_boost 1
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor performance
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2188800
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2342400
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 2188800
+	write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 2342400
+	write /sys/module/workqueue/parameters/power_efficient N
+	write /sys/class/kgsl/kgsl-3d0/max_gpuclk 624000000
+	write /sys/class/kgsl/kgsl-3d0/max_gpuclk 653000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/governor performance
+	
+# Common
+on property:persist.spectrum.profile=0
+	# Online CPUs
+	write /sys/devices/system/cpu/cpu0/online 1
+	write /sys/devices/system/cpu/cpu1/online 1
+	write /sys/devices/system/cpu/cpu2/online 1
+	write /sys/devices/system/cpu/cpu3/online 1
+	# Boosts
+	write /sys/module/cpu_boost/parameters/input_boost_enabled 0
+	write /sys/module/cpu_boost/parameters/input_boost_freq "0:0 1:0 2:0 3:0"
+	write /sys/module/msm_performance/parameters/touchboost 0
+	write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 0
+	write /sys/module/cpu_input_boost/parameters/input_boost_freq_lp 0
+	write /sys/module/cpu_input_boost/parameters/dynamic_stune_boost 0
+	write /dev/stune/schedtune.sched_boost 0
+	write /dev/stune/top-app/schedtune.sched_boost 0
+	write /dev/stune/foreground/schedtune.sched_boost 0
+	write /dev/stune/background/schedtune.sched_boost 0
+    write /dev/stune/rt/schedtune.sched_boost 0
+	write /sys/module/cpu_boost/parameters/input_boost_ms 0
+	write /sys/module/cpu_input_boost/parameters/input_boost_duration 0
+	# Thermals
+	write /sys/kernel/msm_thermal/enabled 0
+	write /sys/module/msm_thermal/core_control/enabled 0
+	write /sys/module/msm_thermal/vdd_restriction/enabled 0
+	write /sys/module/msm_thermal/parameters/enabled N
+	# Kernel Samepage Merging
+	write /sys/kernel/mm/ksm/run 0
+	write /sys/kernel/mm/uksm/run 0
+	# I/O Scheduler
+	setprop sys.io.scheduler maple
+	write /sys/block/sda/queue/iostats 0
+	write /sys/block/sda/queue/read_ahead_kb 256
+	write /sys/block/sda/queue/scheduler maple
+	write /sys/block/sdb/queue/iostats 0
+	write /sys/block/sdb/queue/read_ahead_kb 256
+	write /sys/block/sdb/queue/scheduler maple
+	write /sys/block/sdc/queue/iostats 0
+	write /sys/block/sdc/queue/read_ahead_kb 256
+	write /sys/block/sdc/queue/scheduler maple
+	write /sys/block/sdd/queue/iostats 0
+	write /sys/block/sdd/queue/read_ahead_kb 256
+	write /sys/block/sdd/queue/scheduler maple
+	write /sys/block/sde/queue/iostats 0
+	write /sys/block/sde/queue/read_ahead_kb 256
+	write /sys/block/sde/queue/scheduler maple
+	write /sys/block/sdf/queue/iostats 0
+	write /sys/block/sdf/queue/read_ahead_kb 256
+	write /sys/block/sdf/queue/scheduler maple
+	# Low Memory Killer
+	write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 0
+	write /sys/module/lowmemorykiller/parameters/minfree 2560,3840,20688,25600,32000,38400
+	# Virtual Memory
+	write /proc/sys/vm/swappiness 30
+	# Entropy
+	write /proc/sys/kernel/random/read_wakeup_threshold 1024
+	write /proc/sys/kernel/random/write_wakeup_threshold 2048
+	# Undebug
+	write /sys/module/earlysuspend/parameters/debug_mask 0
+	write /sys/module/alarm/parameters/debug_mask 0
+	write /sys/module/alarm_dev/parameters/debug_mask 0
+	write /sys/module/binder/parameters/debug_mask 0
+	write /sys/devices/system/edac/cpu/log_ce 0
+	write /sys/devices/system/edac/cpu/log_ue 0
+	write /sys/module/binder/parameters/debug_mask 0
+	write /sys/module/bluetooth/parameters/disable_ertm Y
+	write /sys/module/bluetooth/parameters/disable_esco Y
+	write /sys/module/debug/parameters/enable_event_log 0
+	write /sys/module/dwc3/parameters/ep_addr_rxdbg_mask 0 
+	write /sys/module/dwc3/parameters/ep_addr_txdbg_mask 0
+	write /sys/module/edac_core/parameters/edac_mc_log_ce 0
+	write /sys/module/edac_core/parameters/edac_mc_log_ue 0
+	write /sys/module/glink/parameters/debug_mask 0
+	write /sys/module/hid_apple/parameters/fnmode 0
+	write /sys/module/hid_magicmouse/parameters/emulate_3button N
+	write /sys/module/hid_magicmouse/parameters/emulate_scroll_wheel N
+	write /sys/module/ip6_tunnel/parameters/log_ecn_error N
+	write /sys/module/lowmemorykiller/parameters/debug_level 0
+	write /sys/module/msm_show_resume_irq/parameters/debug_mask 0
+	write /sys/module/msm_smd/parameters/debug_mask 0
+	write /sys/module/msm_smem/parameters/debug_mask 0 
+	write /sys/module/otg_wakelock/parameters/enabled N 
+	write /sys/module/service_locator/parameters/enable 0 
+	write /sys/module/sit/parameters/log_ecn_error N
+	write /sys/module/smem_log/parameters/log_enable 0
+	write /sys/module/smp2p/parameters/debug_mask 0
+	write /sys/module/sync/parameters/fsync_enabled N
+	write /sys/module/touch_core_base/parameters/debug_mask 0
+	write /sys/module/usb_bam/parameters/enable_event_log 0
+	write /sys/module/printk/parameters/console_suspend Y
+	write /proc/sys/debug/exception-trace 0
+	write /sys/kernel/printk_mode/printk_mode 0
+	# Wakelocks
+	write /sys/class/misc/boeffla_wakelock_blocker/wakelock_blocker "wlan_pno_wl;wlan_ipa;wcnss_filter_lock;[timerfd];hal_bluetooth_lock;IPA_WS;sensor_ind;wlan;netmgr_wl;qcom_rx_wakelock;wlan_wow_wl;wlan_extscan_wl;NETLINK"
+	write /sys/module/smb135x_charger/parameters/use_wlock N
+	write /sys/module/xhci_hcd/parameters/wl_divide N
+	write /sys/module/bcmdhd/parameters/wlctrl_divide N
+	write /sys/module/bcmdhd/parameters/wlrx_divide N
+	write /sys/module/wakeup/parameters/enable_bluesleep_ws N
+	write /sys/module/wakeup/parameters/enable_si_wsk N
+	write /sys/module/wakeup/parameters/enable_smb135x_wake_ws N
+	write /sys/module/smb135x_charger/parameters/use_wlock N
+	write /sys/module/wakeup/parameters/enable_wlan_ctrl_wake_ws N
+	write /sys/module/wakeup/parameters/enable_wlan_ws N
+	write /sys/module/wakeup/parameters/enable_wlan_wow_wl_ws N
+	write /sys/module/wakeup/parameters/enable_wlan_wake_ws N
+	write /sys/module/wakeup/parameters/enable_wlan_rx_wake_ws N
+	write /sys/module/wakeup/parameters/enable_wlan_extscan_wl_ws N
+	write /sys/module/wakeup/parameters/enable_timerfd_ws N
+	write /sys/module/wakeup/parameters/enable_qcom_rx_wakelock_ws N
+	write /sys/module/wakeup/parameters/enable_netmgr_wl_ws N
+	write /sys/module/wakeup/parameters/enable_netlink_ws N
+	write /sys/module/wakeup/parameters/enable_ipa_ws N
+	write /sys/module/wakeup/parameters/enable_bluedroid_timer_ws N
+	write /sys/module/wakeup/parameters/enable_si_ws N
+	write /sys/module/wakeup/parameters/enable_si_ws N
+	write /sys/module/wakeup/parameters/enable_msm_hsic_ws N
+	write /sys/module/wakeup/parameters/wlan_rx_wake N
+	write /sys/module/wakeup/parameters/wlan_ctrl_wake N
+	write /sys/module/wakeup/parameters/wlan_wake N
+	write /sys/module/wakeup/parameters/enable_wcnss_filter_lock_ws N
+	write /sys/module/wakeup/parameters/enable_wlan_pno_wl_ws N
+	write /sys/module/wakeup/parameters/enable_wlan_ipa_ws N
+	write /sys/module/wakeup/parameters/enable_bluetooth_timer Y
+	write /sys/module/bcmdhd/parameters/wlctrl_divide 8
+	write /sys/module/bcmdhd/parameters/wlrx_divide 8

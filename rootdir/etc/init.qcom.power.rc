@@ -46,14 +46,14 @@ on boot
     chown system system /dev/cpuset/camera-daemon
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
-
+	
     # if EAS is present, switch to sched governor (no effect if not EAS)
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
 
     # Enable sched boost
-    # write /proc/sys/kernel/sched_boost 1
-
+    #write /proc/sys/kernel/sched_boost 1
+	
     # Set light thermal restrictions while optimizing apps
     # [throttle_freq_LITTLE, throttle_freq_big, throttle_temp, unthrottle_temp]
     write /sys/kernel/msm_thermal/zone0 "1228800 1632000 46 44"
@@ -81,14 +81,13 @@ on charger
     start thermal-engine
 
 on enable-low-power
-
     # Disable sched_boost after boot complete
     write /proc/sys/kernel/sched_boost 0
 
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 80640
 
     write /sys/devices/system/cpu/cpu0/online 1
-
+	
     write /sys/devices/system/cpu/cpu2/online 1
 
     # configure governor settings for silver cluster
@@ -186,7 +185,7 @@ on enable-low-power
 
     # Set nice Level to 9
     write /proc/sys/kernel/sched_upmigrate_min_nice 9
-
+	
     # Set PowerHal property
     setprop vendor.post_boot.parsed 1
 

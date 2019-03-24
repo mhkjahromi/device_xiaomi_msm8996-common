@@ -207,6 +207,12 @@ service charger /sbin/chargeonlymode
     group system graphics
     seclabel u:r:healthd:s0
 
+service energy-awareness /vendor/bin/energy-awareness	
+    class main	
+    user root	
+    group system	
+    oneshot
+
 service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root

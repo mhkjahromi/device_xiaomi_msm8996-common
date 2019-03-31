@@ -31,6 +31,9 @@
 /sys/devices/virtual/timed_output/vibrator/vtg_min      u:object_r:sysfs_vibrator:s0
 /sys/devices/virtual/timed_output/vibrator/vtg_max      u:object_r:sysfs_vibrator:s0
 
+# QC3.0 charging current limit
+/sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma    u:object_r:qc3_limit:s0
+
 /sys/module/cnss_common/parameters/bdwlan_file                                  u:object_r:sysfs_cnss_common:s0
 
 # Data files

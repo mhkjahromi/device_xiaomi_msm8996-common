@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
- *           (C) 2017 The LineageOS Project
+ *           (C) 2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,13 +23,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.os.UserHandle;
+import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 
 import java.io.File;
-import com.cyanogenmod.settings.device.preference.VibratorStrengthPreference;
-import com.cyanogenmod.settings.device.utils.Utils;
+
 import com.cyanogenmod.settings.device.utils.FileUtils;
 
 public class Startup extends BroadcastReceiver {
@@ -41,7 +39,6 @@ public class Startup extends BroadcastReceiver {
         final String action = intent.getAction();
 
         DisplayCalibration.restore(context);
-//	KeyHandler.setButtonSetting(context);
 
         if (Intent.ACTION_BOOT_COMPLETED.equals(action)
                 || Intent.ACTION_PRE_BOOT_COMPLETED.equals(action)) {
@@ -73,17 +70,20 @@ public class Startup extends BroadcastReceiver {
                 }
 
                 // Send initial broadcasts
-                final boolean shouldEnablePocketMode =
+//                final boolean shouldEnablePocketMode =
+//                        prefs.getBoolean(Constants.FP_WAKEUP_KEY, false) &&
+//                        prefs.getBoolean(Constants.FP_POCKETMODE_KEY, false);
+//                Utils.broadcastCustIntent(context, shouldEnablePocketMode);
                         prefs.getBoolean(Constants.FP_WAKEUP_KEY, false);
-                Utils.broadcastCustIntent(context, shouldEnablePocketMode);
             }
         }
     }
 
     static boolean hasButtonProcs() {
-        return new File(Constants.BUTTON_SWAP_NODE).exists() ||
+        return new File(Constants.CYTTSP_BUTTON_SWAP_NODE).exists() ||
                 new File(Constants.FP_HOME_KEY_NODE).exists() ||
-                new File(Constants.FP_WAKEUP_NODE).exists();
+                new File(Constants.FP_WAKEUP_NODE).exists() ||
+                new File(Constants.TOUCHPANEL_BUTTON_SWAP_NODE).exists();
     }
 
     private void disableComponent(Context context, String component) {

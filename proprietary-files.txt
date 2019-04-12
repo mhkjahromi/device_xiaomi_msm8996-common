@@ -650,15 +650,17 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/lib/libmdmdetect.so
 vendor/radio/qcril_database/qcril.db
 
+# Sensors - from Xiaomi Mi A2 PKQ1.180904.001
+vendor/lib64/libsensor1.so|322bd23852df0a0d6bfebf854e76f0181aa5ca7b
+vendor/lib/libsensor1.so|a34ac1e81a8eb93efe434829d74809a5aa307d3c
+
 # Sensors
 vendor/bin/sensors.qcom
 vendor/lib64/hw/activity_recognition.msm8996.so
-vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 vendor/lib/hw/activity_recognition.msm8996.so
-vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so

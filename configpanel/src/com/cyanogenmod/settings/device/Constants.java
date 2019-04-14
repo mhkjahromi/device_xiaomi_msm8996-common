@@ -78,7 +78,7 @@ public class Constants {
         sBooleanNodePreferenceMap.put(DT2W_KEY, DT2W_NODE);
 	sStringNodePreferenceMap.put(CHARGE_LIMIT_KEY, CHARGE_LIMIT_NODE);
 
-        sNodeDefaultMap.put(BUTTON_SWAP_KEY, false);
+        sNodeDefaultMap.put(BUTTON_SWAP_KEY, true);
         sNodeDefaultMap.put(DT2W_KEY, false);
         sNodeDefaultMap.put(FP_HOME_KEY, true);
         sNodeDefaultMap.put(FP_WAKEUP_KEY, true);

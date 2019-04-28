@@ -161,9 +161,10 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.power.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+	init.qcom.sh
 #	init.spectrum.rc
-#    init.spectrum.sh
+#   init.spectrum.sh
 
 # Display
 PRODUCT_PACKAGES += \

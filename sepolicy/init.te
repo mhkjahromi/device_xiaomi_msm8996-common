@@ -10,3 +10,106 @@ allow init sysfs_type:lnk_file read;
 allow init firmware_file:dir mounton;
 allow init persist_file:dir mounton;
 allow init userdata_block_device:blk_file { write };
+allow init audio_data_file:file append;
+allow init audio_device:chr_file { ioctl write };
+allow init audioserver:binder transfer;
+allow init bluetooth:binder call;
+allow init bluetooth_data_file:file append;
+allow init camera_data_file:sock_file write;
+allow init hwservicemanager:binder { call transfer };
+allow init ion_device:chr_file ioctl;
+allow init mm-qcamerad:unix_dgram_socket sendto;
+allow init property_socket:sock_file write;
+allow init self:capability sys_nice;
+allow init serial_device:chr_file { ioctl write };
+allow init sysfs_kgsl:dir write;
+allow init video_device:chr_file { ioctl write };
+allow init vndbinder_device:chr_file { ioctl open read write };
+allow init wcnss_filter:unix_stream_socket connectto;
+allow init sysfs:file setattr;
+allow init proc:file { open read getattr};
+allow init nativetest_data_file:file getattr;
+allow init kernel:system module_request;
+
+#============= init ==============
+allow init {
+ adbd
+ adsprpcd
+ audioserver
+ bootanim
+ bootstat
+ cameraserver
+ cnd
+ dumpstate
+ fsck
+ hal_alarm_qti_default
+ hal_audio_default
+ hal_bluetooth_qti
+ hal_camera_default
+ hal_configstore_default
+ hal_display_color_default
+ hal_drm_clearkey
+ hal_drm_default
+ hal_drm_widevine
+ hal_fingerprint_default
+ hal_gatekeeper_default
+ hal_gnss_qti
+ hal_graphics_allocator_default
+ hal_graphics_composer_default
+ hal_health_default
+ hal_wifi_supplicant_default
+ hal_cas_default
+ hal_imsrtp
+ hal_ir_default
+ hal_light_default
+ hal_keymaster_default
+ hal_memtrack_default
+ hal_nfc_default
+ hal_neuralnetworks_hvx
+ hal_power_default
+ hal_rcsservice
+ hal_sensors_default
+ hal_thermal_default
+ hal_usb_default
+ hal_vibrator_default
+ hal_wifi_default
+ ims
+ init_panel
+ installd
+ ipacm
+ irsc_util
+ hwservicemanager
+ keystore
+ mediaextractor
+ mediadrmserver
+ mediametrics
+ mm-qcamerad
+ msm_irqbalanced
+ lmkd
+ logd
+ netd
+ netmgrd
+ readmac
+ readfem
+ rild
+ rfs_access
+ rmt_storage
+ sensors
+ servicemanager
+ surfaceflinger
+ tee
+ thermal-engine
+ time_daemon
+ toolbox
+ tzdatacheck
+ ueventd
+ vdc
+ vendor_init
+ vendor_per_mgr
+ vndservicemanager
+ vold
+ zygote
+}:process noatsecure;
+
+allow init sysfs:dir write;
+allow init system_file:{ dir file } relabelfrom;

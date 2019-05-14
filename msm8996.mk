@@ -195,10 +195,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
-
-# OnePlus Gallery
-PRODUCT_PACKAGES += \
-    opgallery
 	
 # GPS
 PRODUCT_PACKAGES += \

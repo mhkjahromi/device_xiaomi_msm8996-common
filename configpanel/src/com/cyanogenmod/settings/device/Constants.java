@@ -30,7 +30,6 @@ public class Constants {
 //    public static final String FP_POCKETMODE_KEY = "fp_pocketmode";
     public static final String FP_WAKEUP_KEY = "fp_wakeup";
     public static final String DT2W_KEY = "dt2w";
-    public static final String CHARGE_LIMIT_KEY = "hvdcp3";
 
 
     // Nodes
@@ -40,7 +39,6 @@ public class Constants {
     public static final String TOUCHPANEL_BUTTON_SWAP_NODE = "/proc/touchpanel/reversed_keys_enable";
     public static final String VIRTUAL_KEYS_NODE = "/proc/touchpanel/capacitive_keys_enable";
     public static final String DT2W_NODE = "/proc/touchpanel/double_tap_enable";
-    public static final String CHARGE_LIMIT_NODE = "/sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma";
 
     // Intents
     public static final String CUST_INTENT = "com.cyanogenmod.settings.device.CUST_UPDATE";
@@ -63,8 +61,7 @@ public class Constants {
         BUTTON_SWAP_KEY,
         FP_HOME_KEY,
         FP_WAKEUP_KEY,
-	DT2W_KEY,
-	CHARGE_LIMIT_KEY
+		DT2W_KEY
     };
 
     static {
@@ -76,13 +73,11 @@ public class Constants {
         sBooleanNodePreferenceMap.put(FP_HOME_KEY, FP_HOME_KEY_NODE);
         sBooleanNodePreferenceMap.put(FP_WAKEUP_KEY, FP_WAKEUP_NODE);
         sBooleanNodePreferenceMap.put(DT2W_KEY, DT2W_NODE);
-	sStringNodePreferenceMap.put(CHARGE_LIMIT_KEY, CHARGE_LIMIT_NODE);
 
         sNodeDefaultMap.put(BUTTON_SWAP_KEY, true);
         sNodeDefaultMap.put(DT2W_KEY, false);
         sNodeDefaultMap.put(FP_HOME_KEY, true);
         sNodeDefaultMap.put(FP_WAKEUP_KEY, true);
-        sNodeDefaultMap.put(CHARGE_LIMIT_KEY, "1800");
 
         sNodeDependencyMap.put(FP_HOME_KEY, new String[]{ VIRTUAL_KEYS_NODE, "1" });
     }

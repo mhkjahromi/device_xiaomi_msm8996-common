@@ -34,10 +34,4 @@
   <string name="fp_wakeup_title">Сканер отпечатков будит устройство</string>
   <string name="fp_wakeup_summary">Позволить сканеру отпечатков пальца будить устройство при выключенном экране</string>
 
- <!-- Vibrator -->
-    <string name="vibrator_category">Вибрация</string>
-    <string name="vibrator_title">Сила</string>
-    <string name="vibrator_summary">Установить силу вибрации</string>
-    <string name="vibrator_test">Тест</string>
-
 </resources>

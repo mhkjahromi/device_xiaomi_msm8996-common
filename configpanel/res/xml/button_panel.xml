@@ -17,15 +17,10 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        android:title="@string/buttons_title">
-
     <SwitchPreference
         android:key="button_swap"
         android:title="@string/button_swap_title"
         android:summary="@string/button_swap_summary" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="fp_key"
@@ -41,12 +36,6 @@
             android:title="@string/fp_wakeup_title"
             android:summary="@string/fp_wakeup_summary" />
 
-        <!--SwitchPreference
-            android:key="fp_pocketmode"
-            android:title="@string/fingerprint_pocketmode_title"
-            android:summary="@string/fingerprint_pocketmode_summary"
-            android:dependency="fp_wakeup" /-->
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -58,15 +47,6 @@
             android:title="@string/dt2w_title"
             android:summary="@string/dt2w_summary" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/vibrator_category">
-        <com.cyanogenmod.settings.device.VibratorStrengthPreference
-           android:key="vibrator_key"
-            android:iconSpaceReserved="false"
-            android:title="@string/vibrator_title"
-            android:summary="@string/vibrator_summary" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -36,18 +36,11 @@ import com.cyanogenmod.settings.device.utils.FileUtils;
 public class ButtonSettingsFragment extends PreferenceFragment
         implements OnPreferenceChangeListener {
 
-    private VibratorStrengthPreference mVibratorStrength;
-
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.button_panel);
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-        mVibratorStrength = (VibratorStrengthPreference) findPreference("vibrator_key");
-        if (mVibratorStrength != null) {
-            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
-        }
     }
 
     @Override
@@ -58,16 +51,11 @@ public class ButtonSettingsFragment extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         String node = Constants.sBooleanNodePreferenceMap.get(preference.getKey());
         if (!TextUtils.isEmpty(node)) {
             Boolean value = (Boolean) newValue;
             FileUtils.writeLine(node, value ? "1" : "0");
-            if (Constants.FP_WAKEUP_KEY.equals(preference.getKey())) {
-
-                Utils.broadcastCustIntent(getContext(), value);
-            }
             return true;
         }
         node = Constants.sStringNodePreferenceMap.get(preference.getKey());
@@ -75,7 +63,6 @@ public class ButtonSettingsFragment extends PreferenceFragment
             FileUtils.writeLine(node, (String) newValue);
             return true;
         }
-
 
         return false;
     }
@@ -107,7 +94,6 @@ public class ButtonSettingsFragment extends PreferenceFragment
                 l.setEnabled(false);
             }
         }
-
     }
 
     @Override
@@ -130,15 +116,6 @@ public class ButtonSettingsFragment extends PreferenceFragment
                         Constants.sNodeDependencyMap.get(pref)[1]);
                 Utils.updateDependentPreference(getContext(), b, pref, shouldSetEnabled);
             }
-        }
-    }
-
-    @Override
-    public void onDisplayPreferenceDialog(Preference preference) {
-        if (preference instanceof VibratorStrengthPreference){
-           ((VibratorStrengthPreference)preference).onDisplayPreferenceDialog(preference);
-        } else {
-            super.onDisplayPreferenceDialog(preference);
         }
     }
 }

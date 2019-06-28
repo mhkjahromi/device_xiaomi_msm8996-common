@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
- *           (C) 2017-2018 The LineageOS Project
+ *           (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,11 @@
 
 package com.cyanogenmod.settings.device;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.provider.SearchIndexableResource;
 import android.provider.SearchIndexablesProvider;
 
-import static android.provider.SearchIndexablesContract.COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_CLASS_NAME;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_ICON_RESID;
 import static android.provider.SearchIndexablesContract.COLUMN_INDEX_XML_RES_INTENT_ACTION;
@@ -35,12 +33,6 @@ import static android.provider.SearchIndexablesContract.INDEXABLES_RAW_COLUMNS;
 import static android.provider.SearchIndexablesContract.INDEXABLES_XML_RES_COLUMNS;
 import static android.provider.SearchIndexablesContract.NON_INDEXABLES_KEYS_COLUMNS;
 
-import com.cyanogenmod.settings.device.utils.FileUtils;
-import com.cyanogenmod.settings.device.utils.PackageManagerUtils;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvider {
     private static final String TAG = "ConfigPanelSearchIndexablesProvider";
 
@@ -49,7 +41,7 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
     private static SearchIndexableResource[] INDEXABLE_RES = new SearchIndexableResource[]{
             new SearchIndexableResource(1, R.xml.button_panel,
                     ButtonSettingsActivity.class.getName(),
-                    R.drawable.ic_settings_device_features),
+                    R.drawable.ic_settings_additional_buttons),
     };
 
     @Override
@@ -67,7 +59,7 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
     }
 
     private static Object[] generateResourceRef(SearchIndexableResource sir) {
-        final Object[] ref = new Object[INDEXABLES_XML_RES_COLUMNS.length];
+        Object[] ref = new Object[7];
         ref[COLUMN_INDEX_XML_RES_RANK] = sir.rank;
         ref[COLUMN_INDEX_XML_RES_RESID] = sir.xmlResId;
         ref[COLUMN_INDEX_XML_RES_CLASS_NAME] = null;
@@ -76,17 +68,6 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
         ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_PACKAGE] = "com.cyanogenmod.settings.device";
         ref[COLUMN_INDEX_XML_RES_INTENT_TARGET_CLASS] = sir.className;
         return ref;
-    }
-
-    private List<String> getNonIndexableKeys(Context context) {
-        List<String> keys = new ArrayList<>();
-
-        if (!FileUtils.fileExists(Constants.FP_HOME_KEY_NODE) &&
-                !FileUtils.fileExists(Constants.FP_WAKEUP_NODE)) {
-            keys.add(Constants.FP_HOME_KEY);
-            keys.add(Constants.FP_WAKEUP_KEY);
-        }
-        return keys;
     }
 
     @Override
@@ -98,14 +79,6 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
     @Override
     public Cursor queryNonIndexableKeys(String[] projection) {
         MatrixCursor cursor = new MatrixCursor(NON_INDEXABLES_KEYS_COLUMNS);
-        final Context context = getContext();
-
-        List<String> nonIndexableKeys = getNonIndexableKeys(context);
-        for (String nik : nonIndexableKeys) {
-            final Object[] ref = new Object[NON_INDEXABLES_KEYS_COLUMNS.length];
-            ref[COLUMN_INDEX_NON_INDEXABLE_KEYS_KEY_VALUE] = nik;
-            cursor.addRow(ref);
-        }
         return cursor;
     }
 }

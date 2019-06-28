@@ -39,10 +39,6 @@ public class Startup extends BroadcastReceiver {
         final String action = intent.getAction();
         if (Intent.ACTION_BOOT_COMPLETED.equals(action)
                 || Intent.ACTION_PRE_BOOT_COMPLETED.equals(action)) {
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-            VibratorStrengthPreference.restore(context);
-            DisplayCalibration.restore(context);
 
             // Disable button settings if needed
             if (!hasButtonProcs()) {
@@ -65,13 +61,6 @@ public class Startup extends BroadcastReceiver {
                             " failed while restoring saved preference values");
                     }
                 }
-
-                // Send initial broadcasts
-//                final boolean shouldEnablePocketMode =
-//                        prefs.getBoolean(Constants.FP_WAKEUP_KEY, false) &&
-//                        prefs.getBoolean(Constants.FP_POCKETMODE_KEY, false);
-//                Utils.broadcastCustIntent(context, shouldEnablePocketMode);
-                        prefs.getBoolean(Constants.FP_WAKEUP_KEY, false);
             }
         }
     }

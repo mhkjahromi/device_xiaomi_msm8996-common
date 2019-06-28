@@ -47,17 +47,6 @@
 <!--    <string name="fingerprint_pocketmode_title">Prevent accidental wake-up</string>
     <string name="fingerprint_pocketmode_summary">Check the proximity sensor prior to wake-ups triggered by the fingerprint sensor</string>
 
-    < Kcal -->
-    <string name="kcal_title">Display color</string>
-    <string name="kcal_summary">Display color calibration using KCAL</string>
-    <string name="kcal_enabled_title">Enable KCAL</string>
-    <string name="kcal_enabled_summary">Turn on display calibration using KCAL</string>
-    <string name="kcal_red">Red</string>
-    <string name="kcal_green">Green</string>
-    <string name="kcal_blue">Blue</string>
-    <string name="kcal_saturation">Saturation</string>
-    <string name="kcal_contrast">Constrast</string>
-
     <!-- Vibrator -->
     <string name="vibrator_category">Vibrator</string>
     <string name="vibrator_title">Strength</string>

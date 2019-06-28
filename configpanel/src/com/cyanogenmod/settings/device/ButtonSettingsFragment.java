@@ -19,7 +19,6 @@ package com.cyanogenmod.settings.device;
 
 import android.app.ActionBar;
 import android.content.SharedPreferences;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v14.preference.SwitchPreference;
@@ -27,8 +26,6 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceManager;
-import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.PreferenceScreen;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
@@ -39,7 +36,6 @@ import com.cyanogenmod.settings.device.utils.FileUtils;
 public class ButtonSettingsFragment extends PreferenceFragment
         implements OnPreferenceChangeListener {
 
-    private Preference mKcalPref;
     private VibratorStrengthPreference mVibratorStrength;
 
     @Override
@@ -52,16 +48,6 @@ public class ButtonSettingsFragment extends PreferenceFragment
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
-
-        mKcalPref = findPreference("kcal");
-        mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-             @Override
-             public boolean onPreferenceClick(Preference preference) {
-                 Intent intent = new Intent(getActivity(), DisplayCalibration.class);
-                 startActivity(intent);
-                 return true;
-             }
-        });
     }
 
     @Override

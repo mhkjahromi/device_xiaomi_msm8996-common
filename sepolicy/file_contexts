@@ -23,9 +23,6 @@
 /sys/devices/soc/soc:fpc_fpc1020/enable_wakeup                                  u:object_r:sysfs_fpc_wakeup:s0
 /sys/devices/soc/soc:fpc_fpc1020/proximity_state                                u:object_r:sysfs_fpc_proximity:s0
 
-/sys/devices/platform/kcal_ctrl.0(/.*)?			u:object_r:kcal_dev:s0
-/sys/bus/platform/drivers/kcal_ctrl(/.*)?		u:object_r:kcal_dev:s0
-
 # Vibrator control
 /sys/devices/virtual/timed_output/vibrator/vtg_level    u:object_r:sysfs_vibrator:s0
 /sys/devices/virtual/timed_output/vibrator/vtg_min      u:object_r:sysfs_vibrator:s0

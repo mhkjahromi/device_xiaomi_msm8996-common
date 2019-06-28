@@ -35,11 +35,8 @@ public class Startup extends BroadcastReceiver {
     private static final String TAG = Startup.class.getSimpleName();
 
     @Override
-    public void onReceive(final Context context, final Intent intent) {
+    public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
-
-        DisplayCalibration.restore(context);
-
         if (Intent.ACTION_BOOT_COMPLETED.equals(action)
                 || Intent.ACTION_PRE_BOOT_COMPLETED.equals(action)) {
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);

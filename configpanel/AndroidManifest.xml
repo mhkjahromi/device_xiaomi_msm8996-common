@@ -64,16 +64,6 @@
                 android:value="com.android.settings.category.device" />
         </activity>
 
-                <activity
-                        android:name="com.cyanogenmod.settings.device.DisplayCalibration"
-                        android:exported="true"
-                        android:label="@string/kcal_title" >
-                        <intent-filter>
-                                <action android:name="android.intent.action.MAIN" />
-                                <category android:name="android.intent.category.DEFAULT" />
-                        </intent-filter>
-		</activity>
-
         <activity android:name=".KeyHandler" />
 
         <receiver android:name=".Startup" >

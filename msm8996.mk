@@ -117,7 +117,7 @@ PRODUCT_PACKAGES += \
     libaacwrapper \
     libaudio-resampler \
     libaudioroute \
-    libqcomvoiceprocessingdescriptors \
+    libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \

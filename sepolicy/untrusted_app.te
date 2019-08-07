@@ -1,0 +1,2 @@
+r_dir_file(untrusted_app, sysfs_batteryinfo)
+allow untrusted_app hal_perf_hwservice:hwservice_manager find;

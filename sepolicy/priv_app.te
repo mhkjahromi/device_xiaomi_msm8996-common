@@ -6,3 +6,6 @@ allow priv_app proc_interrupts:file { open read };
 allow priv_app firmware_file:filesystem getattr;
 allow priv_app mnt_vendor_file:dir search;
 allow priv_app sysfs:file read;
+allow priv_app bt_firmware_file:filesystem getattr;
+allow priv_app sysfs:file open;
+allow priv_app system_app_data_file:dir getattr;

@@ -365,6 +365,8 @@ vendor/lib64/vendor.qti.gnss@1.0.so|90b465adc4542f16fbdd935d0592df73d778909b
 vendor/lib64/vendor.qti.gnss@1.1.so|1edcf36fc3afbc465e53e3b74f99fde1e952f718
 vendor/lib64/vendor.qti.gnss@1.2.so|fc002fdced5768ed97936fde007476c1e9eaabb2
 vendor/lib64/vendor.qti.gnss@2.0.so|58e69a003eb530cf59bbe204251b9652d28a4b89
+etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
+-framework/com.qti.location.sdk.jar|ad4ee06ff8ce36899faebd31d6453b74c5154cdb
 
 # Graphics - from op3 - PKQ1.181203.001
 vendor/lib64/egl/eglSubDriverAndroid.so|dc9cda8392b4305c46e9b21e38d4bf079ce639b7
@@ -529,6 +531,12 @@ framework/org.simalliance.openmobileapi.jar
 vendor/lib/libqti-perfd-client.so|f277daf9632b4d4c22a27abec2c4d0ccf776892d
 vendor/lib64/libqti-perfd-client.so|eaf678de5d7d0de194a263db1835b1f582452419
 vendor/lib64/libperfmgr.so|c3dd666accc3831b081429f283b767b79025979f
+
+# Perfconfigs
+vendor/etc/perf/targetresourceconfigs.xml|ab576578f1bcb02115b8a30d4a109d660d
+vendor/etc/perf/perfboostsconfig.xml|57ab3e5177690fdb32908ff217853bb459b73a1e
+vendor/etc/perf/commonresourceconfigs.xml|7bf6b442875ec6244db05ffcc2ebb85a1c370863
+vendor/etc/perf/targetconfig.xml|3e53c5ab21c0e64c71facd37c66e638f6ca71a40
 
 # msm_irqbalance - from sailfish - PPR2.181005.003
 vendor/bin/msm_irqbalance|3f7a923d9d01dbfda40ebdfdd27a62167df69c13

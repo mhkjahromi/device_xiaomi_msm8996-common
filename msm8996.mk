@@ -285,6 +285,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
+# Mi Ringtone
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/extra/ringtone/Mi.ogg:system/media/audio/ringtones/Mi.ogg
+	
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \

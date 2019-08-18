@@ -104,7 +104,11 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
     mount_all /vendor/etc/fstab.qcom
-
+	
+    #Processgroup
+    chown system system /acct/uid_*
+    chmod 0777 /acct/uid_*
+	
     # Set permissions for persist partition
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist

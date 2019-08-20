@@ -1,2 +1,7 @@
 r_dir_file(untrusted_app, sysfs_batteryinfo)
 allow untrusted_app hal_perf_hwservice:hwservice_manager find;
+allow untrusted_app adsprpcd_file:filesystem getattr;
+allow untrusted_app bt_firmware_file:filesystem getattr;
+allow untrusted_app firmware_file:filesystem getattr;
+allow untrusted_app mnt_vendor_file:dir { getattr search };
+allow untrusted_app rootfs:dir read;

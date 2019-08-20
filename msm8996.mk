@@ -167,6 +167,11 @@ PRODUCT_PACKAGES += \
 #	init.spectrum.rc
 #   init.spectrum.sh
 
+# CMHW
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+	
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \

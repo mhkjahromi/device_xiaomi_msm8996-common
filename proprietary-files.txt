@@ -1,36 +1,31 @@
-# ADSP - from daisy - PKQ1.180917.001 V10.0.7.0 PDLMIXM
-vendor/bin/adsprpcd|3d1e7e14dfc2f2468a06e0af9c0d34f4bda28d4b
-vendor/lib64/libadsprpc.so|fe4a7c28a2284ab95c068ad3ffaf256705cf9a02
-vendor/lib64/libadsp_default_listener.so|f7ea94537c66dfa11e1235064d43c8f56c3b3c51
-vendor/lib64/libfastcvadsp_stub.so|ad72fe745a7a8f4b3a355cc0aaf177c29301f29f
-vendor/lib64/libfastcvopt.so|8a5bc4a2f5b2b14c421eac5f7e828146ac0f0119
-vendor/lib/libadsprpc.so|a2ff69f96a9242d4be0fe5cae2475c23294f937a
-vendor/lib/libadsp_default_listener.so|d9de89d55eba2d35a7583584b51335a663705fa7
-vendor/lib/libadsp_hvx_callback_skel.so|dc7080c68699f69f76260891ebcedcd68a093d40
-vendor/lib/libadsp_hvx_stub.so|4fa14ca235ace82551549b571f767f475fbf4b67
-vendor/lib/libfastcvadsp_stub.so|6b50fd7d53811b51e06fedd87c12a794d0c2f645
-vendor/lib/libfastcvopt.so|be6d462207dcc238a734d324c479d1022a324c16
-
-# ADSP modules - from daisy - PKQ1.180917.001 V10.0.7.0 PDLMIXM
-vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so|8305c614ebf13f84f15989631b8fdfdb9828d9be
-vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so|eb0e912d25b06f977d5a89345c72d142b7ffb8ae
-vendor/lib/rfsa/adsp/dirac_resource.dar|d9b3693eab8c520ef859236b8235752188b7cba0
-vendor/lib/rfsa/adsp/libadsp_fd_skel.so|677d2932dac248049f031fc5893163e22b49439a
-vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so|26fb64a92d48e801a31a867976d325efa366a255
-vendor/lib/rfsa/adsp/libadsp_hvx_skel.so|05776246445316aea822eaa9cb6ae7a47b23c9aa
-vendor/lib/rfsa/adsp/libapps_mem_heap.so|5c82ad9cfe3f30105d899e2a4e90cc7566f81252
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so|3e9c52069ff07e50191d3b3afb33b30409241ab6
-vendor/lib/rfsa/adsp/libscveT2T_skel.so|91b9200dbb982abf0d6b440668252d892a616f66
-vendor/lib/rfsa/adsp/libdspCV_skel.so|628985174b0088bed21c866d7984d23855e5e150
-vendor/lib/rfsa/adsp/libfastcvadsp.so|9818625bfa018f517e32a8f4a1e7fb4b255e5049
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|1ff4a48009e88435d93fd2b9b0c5ea59cedbb4f7
-vendor/lib/rfsa/adsp/libvpp_svc_skel.so|2da97f61c1d14f1f9a38aecd8ab89a1f6fa8d991
+# ADSP
+vendor/bin/adsprpcd
+vendor/lib64/libadsprpc.so
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libfastcvadsp_stub.so
+vendor/lib64/libfastcvopt.so
+vendor/lib/libadsprpc.so
+vendor/lib/libadsp_default_listener.so
+vendor/lib/libadsp_hvx_callback_skel.so
+vendor/lib/libadsp_hvx_stub.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib/libfastcvopt.so
 
 # ADSP modules
+vendor/lib/rfsa/adsp/libadsp_fd_skel.so
+vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
+vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
 vendor/lib/rfsa/adsp/libadsp_hvx_stats.so
 vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so
 vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libexternal_dog_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/us-syncproximity.so
 
@@ -44,49 +39,45 @@ lib/com.qualcomm.qti.ant@1.0.so|fcd6a7130c480bfe4e4d9cc00702ed8444cddc82
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 
-# Audio libraries - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
-etc/permissions/audiosphere.xml|3c6d8f14bd99e52a424282fd5d0a5b9b06485dea
-framework/audiosphere.jar|4450751aad4c268c686fe9bc93da595e14c009d9
-vendor/lib64/soundfx/libqcomvisualizer.so|44f9bb53adbad7465239ab1fe3f8df3e45886a8f
-vendor/lib64/soundfx/libasphere.so|8b34e5df3f9070cdfead48f064a3135a719503c7
-vendor/lib64/soundfx/libqcbassboost.so|16f6b74db3b24ee82674c40498bcc1b319770b50
-vendor/lib64/soundfx/libqcvirt.so|6c21052f294765efb9188454a78791911da919dd
-vendor/lib64/soundfx/libqcreverb.so|a6cd5c47e29ed21a1a5e1aef14df38737d5fb991
-vendor/lib64/soundfx/libqcompostprocbundle.so|9360e05e42b009d2723f403069740ac5bc164bfd
-vendor/lib64/soundfx/libqcomvoiceprocessing.so|afc01c7a2ad147e70a91885dd50c9056770485df
-vendor/lib64/libacdb-fts.so|adff5df616f83351583028a506e5e9abe2860915
-vendor/lib64/libacdbloader.so|909eb3b0bcf3b0db40d2f855a4689293467ccd50
-vendor/lib64/libacdbrtac.so|ea05df263ea3ddee88edb570d43fb8a7b98519de
-vendor/lib64/libadiertac.so|0b74e27dc0cb22033008a775e93761c6ff384a30
-vendor/lib64/libaudcal.so|7fd578685988950c5729f0d0e19c3f6058e5ab62
-vendor/lib64/libaudioalsa.so|422fe0d9b76362810878b146dada0a48b77096c1
-vendor/lib64/libmdsprpc.so|8b2040f7d12774157fcd82de35ddd73349fbfade
-vendor/lib64/libqtigef.so|78a9a0e4a47a1d3d019045d68032f604cbdcae6d
-vendor/lib/soundfx/libqcomvisualizer.so|6950659398ea74c482116e9a3933b9e0f1a68b13
-vendor/lib/soundfx/libasphere.so|504dd71419302f4c49de59429c79f13710b713cf
-vendor/lib/soundfx/libqcbassboost.so|1edabd3cdf2ad7ad1078e8b9c745a9897a4a3020
-vendor/lib/soundfx/libqcvirt.so|e9dcee3e95ae4c32a904eebfaa9736509b127ea6
-vendor/lib/soundfx/libqcreverb.so|a6cd5c47e29ed21a1a5e1aef14df38737d5fb991
-vendor/lib/soundfx/libqcompostprocbundle.so|598b645f5639394993cf0ad59e92ec15d3524cbb
-vendor/lib/soundfx/libqcomvoiceprocessing.so|34c551795cf8a460a6c126b68ea89f40dcbb1547
-vendor/lib/libacdb-fts.so|e5ca100252ef517cd46bc314224f5d4f544dbbb2
-vendor/lib/libacdbloader.so|be45395be21d69e9810827cdec2c6d7c383ce143
-vendor/lib/libacdbrtac.so|ec997fedc418316b4f233ee3ccfd865e527fd7b0
-vendor/lib/libadiertac.so|25ae1c15162116bfb482e677343c33c6009ec62c
-vendor/lib/libadm.so|8db603b99c5c5fe1d2ca4fcc6663bf3eb0ff325d
-vendor/lib/libaudcal.so|04247071e078e8e182728f72241873ef2f27dffc
-vendor/lib/libaudioalsa.so|f54cb672d8db10702f6d46980b049a89242b5409
-vendor/lib/libmdsprpc.so|e4f96f313d58eeb845e5f65815f0d5871cdabfbd
-vendor/lib/libqtigef.so|adf2bfcc4892e4d09d197e6643f639a429fea882
+# Audio libraries
+etc/permissions/audiosphere.xml
+framework/audiosphere.jar
+vendor/lib64/soundfx/libasphere.so
+vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcreverb.so
+vendor/lib64/soundfx/libqcvirt.so
+vendor/lib64/soundfx/libshoebox.so
+vendor/lib64/libacdb-fts.so
+vendor/lib64/libacdbloader.so
+vendor/lib64/libacdbrtac.so
+vendor/lib64/libadiertac.so
+vendor/lib64/libaudcal.so
+vendor/lib64/libaudioalsa.so
+vendor/lib64/libmdsprpc.so
+vendor/lib64/libqtigef.so
+vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libdirac.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
+vendor/lib/soundfx/libshoebox.so
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libadm.so
+vendor/lib/libaudcal.so
+vendor/lib/libaudioalsa.so
+vendor/lib/libmdsprpc.so
+vendor/lib/libqtigef.so
 
-# Bluetooth - from enchilada PKQ1.180716.001
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|d269f76a32c840827f17cc4b6b4f2d03683a7341
-vendor/bin/wcnss_filter|65c276e8ed95b55d337534411add48806e034a84
-vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|d6753f625bec4d3cd49e429a2bb16f5755e3f642
-vendor/lib64/libbtnv.so|0dfa39bd4f70e39d0ff7c789b2958edd8e3463dd
-vendor/lib64/libbt-hidlclient.so|d44900db10a43a46cdb50dced28c191c6a08c486
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|1c643a855c99d18be368d57142e04d5d2f032b9f
+# Bluetooth
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/bin/wcnss_filter
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/libbtnv.so
+vendor/lib64/libbt-hidlclient.so
 
 # Bluetooth (aptX) - from marlin - OPM1.171019.011
 lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
@@ -365,8 +356,6 @@ vendor/lib64/vendor.qti.gnss@1.0.so|90b465adc4542f16fbdd935d0592df73d778909b
 vendor/lib64/vendor.qti.gnss@1.1.so|1edcf36fc3afbc465e53e3b74f99fde1e952f718
 vendor/lib64/vendor.qti.gnss@1.2.so|fc002fdced5768ed97936fde007476c1e9eaabb2
 vendor/lib64/vendor.qti.gnss@2.0.so|58e69a003eb530cf59bbe204251b9652d28a4b89
-etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
--framework/com.qti.location.sdk.jar|ad4ee06ff8ce36899faebd31d6453b74c5154cdb
 
 # Graphics - from op3 - PKQ1.181203.001
 vendor/lib64/egl/eglSubDriverAndroid.so|dc9cda8392b4305c46e9b21e38d4bf079ce639b7
@@ -526,26 +515,37 @@ etc/permissions/org.simalliance.openmobileapi.xml
 framework/org.simalliance.openmobileapi.jar
 -priv-app/SmartcardService/SmartcardService.apk
 
-
-# Perf from - from wahoo
-vendor/lib/libqti-perfd-client.so|f277daf9632b4d4c22a27abec2c4d0ccf776892d
-vendor/lib64/libqti-perfd-client.so|eaf678de5d7d0de194a263db1835b1f582452419
-vendor/lib64/libperfmgr.so|c3dd666accc3831b081429f283b767b79025979f
-
-# Perfconfigs
-vendor/etc/perf/targetresourceconfigs.xml|ab576578f1bcb02115b8a30d4a109d660d
+# Perf - from op3 - PKQ1.181203.001
+vendor/bin/energy-awareness|3f1aa4d518ff361aa3ed9e41ace3e16d36cf0bbe
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|7a38f7ef085ddb1a5cd8731e9d2fc1540c3e85ad
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
+vendor/etc/perf/commonresourceconfigs.xml|73fc37a6fa498a98758b5a91ebacb87ef0ffdcdf
+vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
+vendor/etc/perf/perf-profile1.conf|58c8333b58183fe2412061e5ff22c218b7da305c
+vendor/etc/perf/perf-profile2.conf|66ac3877bf0030b72c99107f665bb392538d0237
+vendor/etc/perf/perf-profile3.conf|3a1edfaeaf087effcadba7c652737ab6dd2d87b5
+vendor/etc/perf/perf-profile4.conf|0bc4779472306b1b225e9fc9be40af54e14e2266
+vendor/etc/perf/perf-profile5.conf|5bc85ed4a0f3cedd57e1e046416f423a83dc4f63
+vendor/etc/perf/perf-profile6.conf|910a193b8425bbe0080f746d6788e66986b2e762
 vendor/etc/perf/perfboostsconfig.xml|57ab3e5177690fdb32908ff217853bb459b73a1e
-vendor/etc/perf/commonresourceconfigs.xml|7bf6b442875ec6244db05ffcc2ebb85a1c370863
-vendor/etc/perf/targetconfig.xml|3e53c5ab21c0e64c71facd37c66e638f6ca71a40
+vendor/etc/perf/targetconfig.xml|b2ea39d05d52364774dbd390732cb5f29ae14941
+vendor/etc/perf/targetresourceconfigs.xml|478715f7bcb07e08e62be023ac0b6302ef65bdb3
+vendor/lib64/libperfgluelayer.so|627a324616de86ba90889a7c8dd7a05c46a30aaa
+vendor/lib64/libqti-perfd.so|68c995a76cad4c8b0af1c4743a5157b70dad1dd1
+vendor/lib64/libqti-perfd-client.so|1e84aa49a8cff0f69f0261c69dd8843534efd79e
+vendor/lib64/libqti-util.so|0c34c7cbb07197841e9f097925fe961f3226e621
+vendor/lib64/vendor.qti.hardware.perf@1.0.so|f3d180595bdfeac68d13e13ecf704f892e7a52a5
+vendor/lib/libperfgluelayer.so|3850d4ea3dbead227b622fcc47fcec29955fcc63
+vendor/lib/libqti-perfd.so|2a2077cf455d5a6b03c0bb2b6eeca554ee28a363
+vendor/lib/libqti-perfd-client.so|a4a6da47ee26fcd5116c514f7fed15b91306aea3
+vendor/lib/libqti-util.so|d65f3ef240cebea73bd1ba8b1132a7e639aa05bb
+vendor/lib/vendor.qti.hardware.perf@1.0.so|84e437b0dea2d8c1d5712a9fadf132ae5d665d46
 
-# msm_irqbalance - from sailfish - PPR2.181005.003
-vendor/bin/msm_irqbalance|3f7a923d9d01dbfda40ebdfdd27a62167df69c13
-
-# Peripheral manager - from daisy - PKQ1.180917.001 V10.0.7.0 PDLMIXM
-vendor/bin/pm-proxy|56e9bdaa39270aa4456c9995a8a9e4618ba616a6
-vendor/bin/pm-service|7cbca1671529a805177f11f3f72defdbbe48a61c
-vendor/lib64/libperipheral_client.so|e2fbf94c589dbf8ae6c544a34441783ae9db3a08
-vendor/lib/libperipheral_client.so|6e06ff7e89cb8054612c98c25240e7570c069752
+# Peripheral manager
+vendor/bin/pm-proxy
+vendor/bin/pm-service
+vendor/lib64/libperipheral_client.so
+vendor/lib/libperipheral_client.so
 
 # Postprocessing - from op3 - PKQ1.181203.001
 vendor/bin/hw/vendor.display.color@1.0-service|2ca340c7fd7689ac8ddf36f948fd95a7cd3bfc2e
@@ -648,31 +648,32 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/lib/libmdmdetect.so
 vendor/radio/qcril_database/qcril.db
 
-# Sensors - from Xiaomi Mi A2 PKQ1.180904.001
-vendor/lib64/libsensor1.so|322bd23852df0a0d6bfebf854e76f0181aa5ca7b
-vendor/lib/libsensor1.so|a34ac1e81a8eb93efe434829d74809a5aa307d3c
-
 # Sensors
 vendor/bin/sensors.qcom
 vendor/lib64/hw/activity_recognition.msm8996.so
+vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 vendor/lib/hw/activity_recognition.msm8996.so
+vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so
 
-# Thermal - from op3 - OPR1.170623.032
-vendor/bin/thermal-engine|ab1d429f5b859c9f10b91db25de9b5f5b7ce5a49
--vendor/lib64/libthermalclient.so|7f2a2b0bc3614cf6411ea11c85ac1b6a8392738f
-vendor/lib64/libthermalioctl.so|4d11093bc25909edc8df3e1164f5fb990c9e8975
--vendor/lib/libthermalclient.so|e14cd4d090e52394cb5a39912e71b50091873bcb
+# Thermal - from op3 - PKQ1.181203.001
+vendor/bin/thermal-engine|b15c9e8fa54ebb15dfeb36c7fbc834a28b4c836e
+-vendor/lib64/libthermalclient.so|94424d7c8f8daff8bbfd7454fe4d5f1fbf411260
+vendor/lib64/libthermalioctl.so|aa2a0abd8fb9792024efd93f648c129b6a22619e
+-vendor/lib/libthermalclient.so|270ea373c617584af092dc4ea2aa1c7bf27be7f4
 
 # Time services - from daisy - PKQ1.180917.001
 -vendor/app/TimeService/TimeService.apk|78109530538aa8fb533ad288c9d356c57481a10e
 vendor/bin/time_daemon|d67f1c50583b5efca0f5baea00a51056a798b7f8
 vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
+
+# WiFi - from daisy - PKQ1.180917.001
+vendor/bin/cnss-daemon|badadcc672341e36228301b02c2bfaa36be09233
 
 # WiFi Display - from op3 - PKQ1.181203.001
 bin/wfdservice|edeb291221024401cbae69c2fa4e58733b7efc4c

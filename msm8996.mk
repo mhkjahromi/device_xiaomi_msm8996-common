@@ -114,13 +114,13 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8996 \
     audio.r_submix.default \
     audio.usb.default \
+    libaacwrapper \
     libaudio-resampler \
     libaudioroute \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
-    libaacwrapper \
     tinymix
 
 PRODUCT_COPY_FILES += \
@@ -167,6 +167,11 @@ PRODUCT_PACKAGES += \
 #	init.spectrum.rc
 #   init.spectrum.sh
 
+# CMHW
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+	
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \

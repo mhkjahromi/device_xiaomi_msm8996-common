@@ -355,6 +355,8 @@ vendor/lib64/vendor.qti.gnss@1.0.so|90b465adc4542f16fbdd935d0592df73d778909b
 vendor/lib64/vendor.qti.gnss@1.1.so|1edcf36fc3afbc465e53e3b74f99fde1e952f718
 vendor/lib64/vendor.qti.gnss@1.2.so|fc002fdced5768ed97936fde007476c1e9eaabb2
 vendor/lib64/vendor.qti.gnss@2.0.so|58e69a003eb530cf59bbe204251b9652d28a4b89
+etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
+-framework/com.qti.location.sdk.jar|ad4ee06ff8ce36899faebd31d6453b74c5154cdb
 
 # Graphics - from op3 - PKQ1.181203.001
 vendor/lib64/egl/eglSubDriverAndroid.so|dc9cda8392b4305c46e9b21e38d4bf079ce639b7
@@ -514,6 +516,9 @@ etc/permissions/org.simalliance.openmobileapi.xml
 framework/org.simalliance.openmobileapi.jar
 -priv-app/SmartcardService/SmartcardService.apk
 
+# msm_irqbalance - from sailfish - PPR2.181005.003
+vendor/bin/msm_irqbalance|3f7a923d9d01dbfda40ebdfdd27a62167df69c13
+
 # Perf
 lib64/vendor.qti.hardware.iop@1.0.so
 lib64/vendor.qti.hardware.perf@1.0.so
@@ -524,14 +529,6 @@ vendor/bin/hw/vendor.qti.hardware.iop@1.0-service
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/etc/init/vendor.qti.hardware.iop@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perf-profile0.conf
-vendor/etc/perf/perf-profile1.conf
-vendor/etc/perf/perf-profile2.conf
-vendor/etc/perf/perf-profile3.conf
-vendor/etc/perf/perf-profile4.conf
-vendor/etc/perf/perf-profile5.conf
-vendor/etc/perf/perf-profile6.conf
 vendor/lib64/hw/vendor.qti.hardware.iop@1.0-impl.so
 vendor/lib64/libfeedbackhandler.so
 vendor/lib64/libperfgluelayer.so
@@ -553,6 +550,13 @@ vendor/lib/libqti-util.so
 vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
 
+# Perfconfigs
+vendor/etc/perf/perfboostsconfig.xml|57ab3e5177690fdb32908ff217853bb459b73a1e
+vendor/etc/perf/commonresourceconfigs.xml|7bf6b442875ec6244db05ffcc2ebb85a1c370863
+vendor/etc/perf/targetconfig.xml|3e53c5ab21c0e64c71facd37c66e638f6ca71a40
+vendor/etc/perf/targetresourceconfigs.xml|ab576578f1bcb02115b8a30d4a109d660d2e6fb6
+vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
+
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
@@ -568,6 +572,12 @@ vendor/lib64/vendor.display.color@1.0.so|a41a76b08f60c0e8787d0e5b6a3155f11f58a5f
 vendor/lib64/vendor.display.color@1.1.so|388404f39cd0c2dd3ea9fc59ee950edf24f78a87
 vendor/lib64/vendor.display.color@1.2.so|da1c83747c7bb4a64cf380bdb889cb811b67bc2e
 vendor/lib64/vendor.display.postproc@1.0.so|f6dae960f3f4eea0d5d36aea4ac0a2e0039691f5
+lib64/vendor.qti.hardware.qdutils_disp@1.0.so|e0fd5a17e9ce0fddda384b9810acd736e5905458
+lib/vendor.qti.hardware.qdutils_disp@1.0.so|c5cb5854abc981b1c26ba3a95c1e1d834e616001
+vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|2536d249be2b723821eae12a505c737e2c6f7681
+vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc|69d9cbc54f8ac0a0fb010f92bfa7de5981d643cf
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|e0fd5a17e9ce0fddda384b9810acd736e5905458
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|c5cb5854abc981b1c26ba3a95c1e1d834e616001
 
 # Power-off alarm - from daisy - PKQ1.180917.001
 framework/vendor.qti.hardware.alarm-V1.0-java.jar|ca5bf830ebb4fbf8fc1994200ec6e03dc83c274b
@@ -683,6 +693,14 @@ vendor/lib64/libthermalioctl.so|4d11093bc25909edc8df3e1164f5fb990c9e8975
 -vendor/app/TimeService/TimeService.apk|78109530538aa8fb533ad288c9d356c57481a10e
 vendor/bin/time_daemon|d67f1c50583b5efca0f5baea00a51056a798b7f8
 vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
+
+# TUI - from daisy 9/PKQ1.180917.001/V10.0.7.0.PDLMIXM
+lib/vendor.qti.hardware.tui_comm@1.0.so|8b9f73504547b72f1d1937b80addfdfbd3cbd881
+lib64/vendor.qti.hardware.tui_comm@1.0.so|886be11a566c18744db517c94e2530b68df819b6
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|86c327a8310fcc42f69c85ec0868c630903c7d79
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|8b9f73504547b72f1d1937b80addfdfbd3cbd881
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|886be11a566c18744db517c94e2530b68df819b6
 
 # WiFi Display - from op3 - PKQ1.181203.001
 bin/wfdservice|edeb291221024401cbae69c2fa4e58733b7efc4c

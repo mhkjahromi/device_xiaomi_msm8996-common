@@ -73,7 +73,6 @@ vendor/lib/libqtigef.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
-vendor/bin/wcnss_filter
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/libbtnv.so
@@ -684,9 +683,6 @@ vendor/lib64/libthermalioctl.so|4d11093bc25909edc8df3e1164f5fb990c9e8975
 -vendor/app/TimeService/TimeService.apk|78109530538aa8fb533ad288c9d356c57481a10e
 vendor/bin/time_daemon|d67f1c50583b5efca0f5baea00a51056a798b7f8
 vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
-
-# WiFi - from daisy - PKQ1.180917.001
-vendor/bin/cnss-daemon|badadcc672341e36228301b02c2bfaa36be09233
 
 # WiFi Display - from op3 - PKQ1.181203.001
 bin/wfdservice|edeb291221024401cbae69c2fa4e58733b7efc4c

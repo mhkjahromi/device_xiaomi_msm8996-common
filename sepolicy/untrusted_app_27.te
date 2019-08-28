@@ -4,3 +4,6 @@ allow untrusted_app_27 proc_zoneinfo:file read;
 allow untrusted_app_27 hal_memtrack_hwservice:hwservice_manager find;
 allow untrusted_app_27 sysfs_kgsl_proc:dir search;
 allow untrusted_app_27 system_app_data_file:dir getattr;
+allow untrusted_app_27 proc_tty_drivers:file read;
+allow untrusted_app_27 self:udp_socket ioctl;
+allow untrusted_app_27 serialno_prop:file read;

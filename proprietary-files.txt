@@ -1,15 +1,19 @@
-# ADSP
-vendor/bin/adsprpcd
-vendor/lib64/libadsprpc.so
-vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libfastcvadsp_stub.so
-vendor/lib64/libfastcvopt.so
-vendor/lib/libadsprpc.so
-vendor/lib/libadsp_default_listener.so
-vendor/lib/libadsp_hvx_callback_skel.so
-vendor/lib/libadsp_hvx_stub.so
-vendor/lib/libfastcvadsp_stub.so
-vendor/lib/libfastcvopt.so
+# ADSP - from LA.UM.7.5.r1-04800-8x96.0
+vendor/bin/adsprpcd|ef200e3bce4429fd9461c74330a003f069ffd5b3
+vendor/lib64/libcdsprpc.so|eff806038c24c25eb0146559c72b1fa4ae3cc8a5
+vendor/lib64/libsdsprpc.so|1e2d86912624b37622ea7a5314be57fae95d6a4d
+vendor/lib64/libadsprpc.so|bc7504a5c64c73748927404be5ccfe4015146d25
+vendor/lib64/libadsp_default_listener.so|e1d57433c5af24e3227b679367c133dde1014714
+vendor/lib64/libfastcvadsp_stub.so|e25929713605e70417dee54b362b98d04a860f47
+vendor/lib64/libfastcvopt.so|28fa9dc4b44e86a9c1e722e5705adf047dd35d50
+vendor/lib/libadsprpc.so|76cf6bd3975e933f1bec55499da3c3e7a17a9e6d
+vendor/lib/libadsp_default_listener.so|d9de89d55eba2d35a7583584b51335a663705fa7
+vendor/lib/libadsp_hvx_callback_skel.so|b7e47d8d0c011caea30daf974de81eb01bb90268
+vendor/lib/libadsp_hvx_stub.so|5842e47b5929e15c8b63f1aa4795ca3432debebb
+vendor/lib/libfastcvopt.so|797b9843ccc1f650d66831d645db2bc96b89c299
+vendor/lib/libfastcvadsp_stub.so|7811d12d68ec3f9fcbd05f55264b6dcec61bc75b
+vendor/lib/libcdsprpc.so|a4b6ee7be7170ce6cbd347cde06754f6759d2608
+vendor/lib/libsdsprpc.so|1bf2e7c12be0cf22a0cb8b1d960e609e5722c950
 
 # ADSP modules
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
@@ -43,7 +47,7 @@ vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 etc/permissions/audiosphere.xml
 framework/audiosphere.jar
 vendor/lib64/soundfx/libasphere.so
-vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcbassboost.so|16f6b74db3b24ee82674c40498bcc1b319770b50
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
@@ -57,7 +61,7 @@ vendor/lib64/libmdsprpc.so
 vendor/lib64/libqtigef.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libdirac.so
-vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcbassboost.so|1edabd3cdf2ad7ad1078e8b9c745a9897a4a3020
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so

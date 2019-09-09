@@ -52,11 +52,6 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
-TARGET_KERNEL_CROSS_COMPILE_ARM32 := /home/mhkjahromi/toolchain/gcc/linux-x86/arm/arm-linux-gnueabi-9.1/bin/arm-eabi-
-KERNEL_TOOLCHAIN := /home/mhkjahromi/toolchain/gcc/linux-x86/aarch64/aarch64-linux-android-9.1/bin
-#TARGET_KERNEL_CLANG_COMPILE := true
-#TARGET_KERNEL_CLANG_VERSION := 9.0.3
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996

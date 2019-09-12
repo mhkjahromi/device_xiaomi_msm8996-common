@@ -60,7 +60,6 @@ vendor/lib64/libaudioalsa.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libqtigef.so
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libdirac.so
 vendor/lib/soundfx/libqcbassboost.so|1edabd3cdf2ad7ad1078e8b9c745a9897a4a3020
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -74,6 +73,11 @@ vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libmdsprpc.so
 vendor/lib/libqtigef.so
+
+# Audio Dirac - from sdm-660-pie
+vendor/lib/soundfx/libdirac.so|f63826a905b520fa524e4c1b147be7cf65240953
+vendor/lib/libDiracAPI_SHARED.so|42b49679d38eca93fead05ea06ddbdc8108fd4b1
+vendor/etc/diracmobile.config|d781cd6798a7481a8f7128d144abfb2b8794212d
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti

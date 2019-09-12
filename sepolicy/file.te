@@ -45,6 +45,7 @@ type proc_irq, fs_type;
 type thermal_data_file, core_data_file_type, data_file_type, file_type;
 type kcal_dev, sysfs_type, file_type;
 type sysfs_qc, sysfs_type, file_type;
+type sysfs_torch, sysfs_type, file_type;
 
 # msm_irqbalance
 type irqbalance_socket, file_type;

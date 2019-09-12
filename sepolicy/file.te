@@ -49,3 +49,6 @@ type sysfs_torch, sysfs_type, file_type;
 
 # msm_irqbalance
 type irqbalance_socket, file_type;
+
+# Dirac
+type dirac_prop, file_type;

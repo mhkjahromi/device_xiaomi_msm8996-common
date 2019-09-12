@@ -335,6 +335,10 @@ on boot
     chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_hue
     chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_min
     chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
+	
+    # Vibration permissions
+    chown system system /sys/class/timed_output/vibrator/vtg_level
+    chmod 0660 /sys/class/timed_output/vibrator/vtg_level
 
     # Set schedutil permissions
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"

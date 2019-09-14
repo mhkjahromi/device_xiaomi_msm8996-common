@@ -37,7 +37,6 @@
 #include <dlfcn.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "gralloc_priv.h"
 #include "native_handle.h"
 
 // Camera definitions

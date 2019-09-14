@@ -43,7 +43,6 @@
 #include "utils/Timers.h"
 #include "sys/ioctl.h"
 #include <sync/sync.h>
-#include "gralloc_priv.h"
 
 // Display dependencies
 #include "qdMetaData.h"

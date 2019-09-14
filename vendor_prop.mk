@@ -42,6 +42,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.tunnel.encode=false \
     vendor.voice.path.for.pcm.voip=true
+	
+# Audio - Xiaomi Dirac
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dirac.acs.controller=qem \
+    persist.dirac.acs.ignore_error=1 \
+    persist.dirac.acs.storeSettings=1 \
+    ro.audio.soundfx.dirac=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \

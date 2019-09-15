@@ -87,7 +87,7 @@ AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 AUDIO_FEATURE_PLAYBACK_ULL := false
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 BOARD_USES_ALSA_AUDIO := true
-USE_CUSTOM_AUDIO_POLICY := 1
+USE_CUSTOM_AUDIO_POLICY := 0
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
@@ -194,7 +194,7 @@ TARGET_RIL_VARIANT := caf
 VENDOR_SECURITY_PATCH := 2019-04-05
 
 # SELinux
-# include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 
 #BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 

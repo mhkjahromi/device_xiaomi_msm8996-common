@@ -163,9 +163,9 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     ueventd.qcom.rc \
-	init.qcom.sh
-#	init.spectrum.rc
-#   init.spectrum.sh
+	init.qcom.sh \
+ 	init.spectrum.rc \
+    init.spectrum.sh
 
 # CMHW
 PRODUCT_PACKAGES += \

@@ -3,5 +3,6 @@ allow hal_audio_default vendor_data_file:dir write;
 allow hal_audio_default vendor_data_file:dir add_name;
 allow hal_audio_default vendor_data_file:file create;
 allow hal_audio_default vendor_data_file:file { append read };
+allow hal_audio_default vendor_data_file:file open;
 get_prop(hal_audio_default, dirac_prop)
 set_prop(hal_audio_default, dirac_prop)

@@ -3,3 +3,5 @@ dontaudit hvdcp self:capability dac_override;
 r_dir_file(hvdcp, sysfs_batteryinfo)
 
 allow hvdcp self:capability sys_admin;
+allow hvdcp sysfs:dir read;
+allow hvdcp sysfs:file { read write };

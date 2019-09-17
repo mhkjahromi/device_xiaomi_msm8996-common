@@ -11,3 +11,5 @@ allow init firmware_file:dir mounton;
 allow init persist_file:dir mounton;
 allow init userdata_block_device:blk_file { write };
 allow init wfdservice:process { noatsecure };
+allow init rootfs:file execute_no_trans;
+allow init su:process transition;

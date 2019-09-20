@@ -158,14 +158,22 @@ PRODUCT_PACKAGES += \
 # Common init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.class_main.sh \
+    init.class_late.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
     init.qcom.rc \
+    init.qcom.sensors.sh \
     init.qcom.sh \
-    init.qcom.power.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc \
 	init.qcom.sh \
  	init.spectrum.rc \
     init.spectrum.sh
+    init.qcom.usb.sh \
+    init.qti.ims.sh \
+    init.recovery.qcom.rc \
+    init.device.rc \
+    ueventd.qcom.rc
 
 # CMHW
 PRODUCT_PACKAGES += \

@@ -39,12 +39,6 @@
 /sys/devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d300/leds/led:torch_0/max_brightness            u:object_r:sysfs_torch:s0
 /sys/devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d300/leds/led:torch_1/max_brightness            u:object_r:sysfs_torch:s0
 
-# Yellow LED
-/sys/devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d300/leds/led:torch_0/brightness            u:object_r:sysfs_yellow_led:s0
-
-# White LED
-/sys/devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d300/leds/led:torch_1/brightness            u:object_r:sysfs_white_led:s0
-
 # Dirac
 persist.audio.dirac.                u:object_r:dirac_prop:s0
 

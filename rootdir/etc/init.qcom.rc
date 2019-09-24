@@ -413,6 +413,10 @@ on post-fs-data
     #Start move time data to /data/vendor once post-fs-data done
     start vendor.move_time_data
 
+    #Processgroup
+    chown system system /acct/uid_*
+    chmod 0777 /acct/uid_*
+
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
     class late_start
     group nfc
